@@ -46,7 +46,7 @@ df3 = pd.DataFrame(most_sale_platform ,columns=['Platform','total_sales'])
 df4 = pd.DataFrame(evolution_of_sales ,columns=['Year','NA_Sales','EU_Sales','JP_Sales','Global_Sales'])
 
 with pd.ExcelWriter('juegos.xlsx') as writer:
-    df1.to_excel(writer, sheet_name='Top 10', index=True)
-    df2.to_excel(writer, sheet_name='Most sale genres', index=True)
-    df3.to_excel(writer, sheet_name='Most sale platform', index=True)
-    df4.to_excel(writer, sheet_name='Evolution of sales', index=True)
+    df1.to_excel(writer, sheet_name='Top 10', index=False)
+    df2.to_excel(writer, sheet_name='Most sale genres', index=False)
+    df3.to_excel(writer, sheet_name='Most sale platform', index=False)
+    df4.to_excel(writer, sheet_name='Evolution of sales', index=False)
