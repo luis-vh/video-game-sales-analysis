@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('data_of_games.csv')
 conn = sqlite3.connect('videogames.db')
@@ -50,3 +51,7 @@ with pd.ExcelWriter('juegos.xlsx') as writer:
     df2.to_excel(writer, sheet_name='Most sale genres', index=False)
     df3.to_excel(writer, sheet_name='Most sale platform', index=False)
     df4.to_excel(writer, sheet_name='Evolution of sales', index=False)
+
+df4.plot(x='Year' ,y='Global_Sales' ,kind='line', marker='o')
+plt.title('Evolution of Sales')
+plt.savefig('Evolution of Sales.png' ,dpi=300 ,bbox_inches='tight')
